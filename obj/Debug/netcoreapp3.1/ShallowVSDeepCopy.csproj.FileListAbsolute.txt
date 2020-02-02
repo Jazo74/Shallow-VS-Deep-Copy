@@ -1,0 +1,11 @@
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/bin/Debug/netcoreapp3.1/ShallowVSDeepCopy
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/bin/Debug/netcoreapp3.1/ShallowVSDeepCopy.deps.json
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/bin/Debug/netcoreapp3.1/ShallowVSDeepCopy.runtimeconfig.json
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/bin/Debug/netcoreapp3.1/ShallowVSDeepCopy.runtimeconfig.dev.json
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/bin/Debug/netcoreapp3.1/ShallowVSDeepCopy.dll
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/bin/Debug/netcoreapp3.1/ShallowVSDeepCopy.pdb
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/obj/Debug/netcoreapp3.1/ShallowVSDeepCopy.csprojAssemblyReference.cache
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/obj/Debug/netcoreapp3.1/ShallowVSDeepCopy.AssemblyInfoInputs.cache
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/obj/Debug/netcoreapp3.1/ShallowVSDeepCopy.AssemblyInfo.cs
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/obj/Debug/netcoreapp3.1/ShallowVSDeepCopy.dll
+/Users/JarmyZ/Projects/ShallowVSDeepCopy/obj/Debug/netcoreapp3.1/ShallowVSDeepCopy.pdb
