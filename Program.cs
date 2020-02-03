@@ -21,23 +21,24 @@ namespace ShallowVSDeepCopy
             Console.WriteLine("(1) Making a recipe");
             Console.WriteLine("(2) Preload 5 recipes");
             Console.WriteLine("(3) Showing all recipes");
-            Console.WriteLine("(4) Cloning a recipe");
-            Console.WriteLine("(5) Changing a recipe");
-            Console.WriteLine("(6) Exit program");
+            Console.WriteLine("(4) Cloning a recipe (Shallow)");
+            Console.WriteLine("(5) Cloning a recipe (Deep)");
+            Console.WriteLine("(6) Changing a recipe");
+            Console.WriteLine("(7) Exit program");
         }
         public static bool Choose()
         {
             string choice = AnyInput("Choose an option: ");
             switch (choice)
             {
-                case "1":
+                case "1": // Addig a new recipe
                     Console.WriteLine();
                     NewRecipe();
                     return true;
-                case "2":
+                case "2": //Adding 5 premaded recipe
                     PreLoad();
                     return true;
-                case "3":
+                case "3": // Showing all the recipes by ToString method
                     Console.WriteLine();
                     foreach (Recipe recipe in recipeList)
                     {
@@ -45,21 +46,22 @@ namespace ShallowVSDeepCopy
                     }
                     AnyInput("Press any key to continue...");
                     return true;
-                case "4":
+                case "4": // Cloning a recipe (Shallow)
                     Console.WriteLine();
                     int id = JustNumber("Give me the ID of the recipe you want to clone: ");
                     bool found = false;
-                    Recipe newRecipe = new Recipe();
+                    int index = 0;
                     for (int i = 0; i<recipeList.Count; i++)
                     {
                         if (recipeList[i].id == id)
                         {
-                            newRecipe = recipeList[i].Clone();
+                            index = i;
                             found = true;
                         }
                     }
                     if (found)
                     {
+                        Recipe newRecipe = recipeList[index];
                         recipeList.Add(newRecipe);
                     }
                     else
@@ -67,13 +69,36 @@ namespace ShallowVSDeepCopy
                         Console.WriteLine("There is no such recipe with this ID!");
                     }
                     return true;
-                case "5":
+                case "5": // Cloning a recipe (Deep)
                     Console.WriteLine();
-                    int id2 = JustNumber("Give me the ID of the recipe you want to change: ");
+                    int id2 = JustNumber("Give me the ID of the recipe you want to clone: ");
                     bool found2 = false;
+                    int index2 = 0;
                     for (int i = 0; i < recipeList.Count; i++)
                     {
                         if (recipeList[i].id == id2)
+                        {
+                            index = i;
+                            found2 = true;
+                        }
+                    }
+                    if (found2)
+                    {
+                        Recipe newRecipe = (Recipe)recipeList[index2].Clone();
+                        recipeList.Add(newRecipe);
+                    }
+                    else
+                    {
+                        Console.WriteLine("There is no such recipe with this ID!");
+                    }
+                    return true;
+                case "6": // Changing a recipe
+                    Console.WriteLine();
+                    int id3 = JustNumber("Give me the ID of the recipe you want to change: ");
+                    bool found3 = false;
+                    for (int i = 0; i < recipeList.Count; i++)
+                    {
+                        if (recipeList[i].id == id3)
                         {
                             recipeList[i].id = JustNumber("Give me the new ID: ");
                             recipeList[i].Name = AnyInput("Give me the new name: ");
@@ -88,18 +113,19 @@ namespace ShallowVSDeepCopy
                                 Console.WriteLine(recipeList[i].Ingredients[key]);
                                 recipeList[i].Ingredients[key] = AnyInput("Give me the new quantity: ");
                             }
+                            found3 = true;
                             break;
                         }
                     }
-                    if (!found2)
+                    if (!found3)
                     {
                         Console.WriteLine("There is no such recipe with this ID!");
                     }
                     return true;
-                case "6":
+                case "7": // Exit program
                     Console.WriteLine("Bye, bye!");
                     return false;
-                default:
+                default: // Wrong choice
                     Console.WriteLine("Wrong option!");
                     return true;
             }
@@ -158,7 +184,7 @@ namespace ShallowVSDeepCopy
             newRecipe4.Name = "Ham & Eggs";
             newRecipe4.Ingredients.Add("Egg", "2 pieces");
             newRecipe4.Ingredients.Add("Ham or bacon", "10 dkg");
-            newRecipe4.Ingredients.Add("Pork fett or vegetable oil", "1 tablespoon");
+            newRecipe4.Ingredients.Add("Pork fat", "1 teespoon");
             newRecipe4.Ingredients.Add("Salt", "a pinch");
             newRecipe4.Ingredients.Add("Seasoning", "some");
             recipeList.Add(newRecipe4);

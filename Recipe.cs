@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ShallowVSDeepCopy
 {
-    public class Recipe : IClonable
+    public class Recipe : ICloneable
     {
         private static int ID = 0;
         public int id { get; set; }
@@ -29,9 +29,9 @@ namespace ShallowVSDeepCopy
             }
             return toString;
         }
-        public Recipe Clone()
+        public object Clone()
         {
-            return (Recipe) this.MemberwiseClone();
+            return this.MemberwiseClone();
         }
     }
 }
